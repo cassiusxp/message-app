@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "916033832",
+    "project_id": "message-app-cba63",
+    "storage_bucket": "message-app-cba63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916033832:android:ea46a055d08994cd66c01d",
+        "android_client_info": {
+          "package_name": "com.example.message_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYQ8Ki-bqrXw_2LCq7bzvR94WIvGBF_Ls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
