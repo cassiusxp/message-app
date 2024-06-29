@@ -3,6 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:message_app/presentation/screens/chat_screen.dart';
 import 'package:message_app/services/auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 
@@ -53,7 +54,7 @@ class HomeScreen extends StatelessWidget {
         return ListView(
           children: snapshot.data!.docs
               .map<Widget>(
-                (e) => _buildUserTile(e),
+                (e) => _buildUserTile(e, context),
               )
               .toList(),
         );
@@ -61,14 +62,23 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildUserTile(QueryDocumentSnapshot doc) {
+  Widget _buildUserTile(QueryDocumentSnapshot doc, BuildContext context) {
     final user = doc.data() as Map<String, dynamic>;
     if (FirebaseAuth.instance.currentUser!.email != user["email"]) {
       return ListTile(
         title: Text(
           user["email"],
         ),
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => ChatScreen(
+                userUid: FirebaseAuth.instance.currentUser!.uid,
+                targetUid: user["uid"],
+              ),
+            ),
+          );
+        },
       );
     } else {
       return const SizedBox();

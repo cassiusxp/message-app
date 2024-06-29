@@ -1,0 +1,13 @@
+
+
+* Crear modelo de mensajes, con TimeStamp.
+* Crear funcion que devuelva mapa, para traducir el json.
+* Crear un servicio de ChatService para crear funciones.
+
+* Crear funcion sendmessage.
+    * Get current user info
+    * Construct chatroom id from current user id and other id.
+    * Add new message to database
+
+* Crear funcion getMessage.
+    * 
